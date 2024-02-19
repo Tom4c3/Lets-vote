@@ -14,8 +14,8 @@
             }
 
         .tweet-container {
-            max-width: 70%; /* 最大幅を500pxに設定 */
-            height: auto;
+            width: 100%;
+            margin: auto; /* 左右のマージンを自動で調整し中央揃えに */
             overflow: hidden; /* コンテンツがコンテナを超えた場合に隠す */
         }
     </style>
@@ -27,32 +27,33 @@
 
     <div class="navbar sticky-top navbar-dark bg-dark">
         <div class="container-fluid">
-            <div class="navbar-brand">政治的立場</div>
+            <div class="navbar-brand">政治</div>
         </div>
     </div>
 
-    ・私の考えと大体同じ↓<br>
-    <a href="https://scrapbox.io/yuiseki/%E6%94%BF%E6%B2%BB" target="_blank" rel="noreferrer noopener">政治 -yuiseki</a><br><br>
+    ・まずはこちら↓をお読みください．私の考えと大体同じです．<br>
+    　<a href="https://scrapbox.io/yuiseki/%E6%94%BF%E6%B2%BB" target="_blank" rel="noreferrer noopener">政治 -yuiseki</a><br><br>
 
-    ・自民党による憲法改正（改悪），公文書改竄，安倍晋三氏の国葬，裏金，壺などの販売を行うカルト宗教である統一教会からの支援に反対．<br>
-    <a href="http://onyancopon.starfree.jp/uraganejimin/" target="_blank" rel="noreferrer noopener">自民党裏金リスト</a><br><br>
+    ・自民党による憲法改正（改悪），公文書改竄，安倍晋三氏の国葬，裏金，壺などの販売を行うカルト宗教である統一教会からの支援に反対します．<br>
+    　<a href="http://onyancopon.starfree.jp/uraganejimin/" target="_blank" rel="noreferrer noopener">自民党裏金リスト</a><br>
+    <div class="img-container">
+        <img src="./touitsu.jpg" class="card-img-top" alt="憲法">
+    </div><br>
 
-    ・そもそも国民や自民党支持者のほとんどが，日本憲法の内容や存在理由（=国家権力を縛るもの），自民党の改憲草案の内容を知らない状態であり，この国の現状は非常に危険である．<br>
-    <a href="https://kaikensouan.com/" target="_blank" rel="noreferrer noopener">自民党の改憲草案で憲法はどう変わる？</a><br>
+    ・国民や自民党支持者のほとんどが，日本憲法の内容や存在理由（=国家権力を縛るもの），自民党の改憲草案の内容を知らない状態であることを危惧している．<br>
+    　<a href="https://kaikensouan.com/" target="_blank" rel="noreferrer noopener">自民党の改憲草案で憲法はどう変わる？</a><br>
     <div class="img-container">
         <img src="./kenpo.jpg" class="card-img-top" alt="憲法">
-    </div>
+    </div><br>
 
-    ・憲法を擁護し尊重する義務を負ふ（日本国憲法第99条）政治家などの国家公務員が，積極的に憲法改正を叫ぶべきではない（その時点で憲法違反である）．<br><br>
+    ・憲法を擁護し尊重する義務を負ふ（日本国憲法第99条）政治家などの国家公務員が，積極的に憲法改正を叫ぶべきではないと考えている．<br><br>
 
-    ・日本国憲法には違反時の罰則がないため，国民が常に権力を監視し選挙によって憲法を守らせなけれなならない．憲法擁護義務のある者による憲法違反に罰則を定める憲法改正は議論されるべきかもしれない．<br><br>
+    ・日本国憲法には違反時の罰則がないため，国民が常に権力を監視し選挙によって憲法を守らせなけれなならない．憲法擁護義務のある者による憲法違反に，罰則を定める憲法改正は議論されるべきかもしれない．<br><br>
 
     ・現時点での支持政党<br>
-    日本共産党，れいわ新選組<br><br>
+    　社民党，日本共産党，れいわ新選組<br><br>
 
-    ・護身<br>
-    <a href="https://scrapbox.io/yuiseki/%E8%AD%B7%E8%BA%AB" target="_blank" rel="noreferrer noopener">護身 -yuiseki</a><br><br>
-
+    ・自民党の問題点↓
     <div class="tweet-container">
         <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">これを見て、自民党に投票する人は病気だと思ってます。 <br>自民党の全ての人が悪い訳では無いけど、一緒くたに思われても仕方ないよ。皆、気付け！<br>それでも擁護する人は、情報弱者か、日本を壊したいか、裏金貰ってるかだわ。 <a href="https://t.co/63C8LXIs6x">https://t.co/63C8LXIs6x</a></p>&mdash; ೬ƕƱﾟƕᒐゃん🌵 (@pyonjori) <a href="https://twitter.com/pyonjori/status/1756638037948403957?ref_src=twsrc%5Etfw">February 11, 2024</a></blockquote>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -79,6 +80,37 @@
 
 
     </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const imgContainers = document.querySelectorAll(".img-container img");
+
+            imgContainers.forEach(img => {
+                img.addEventListener("click", function () {
+                    const imgUrl = img.getAttribute("src");
+                    const popupImage = document.getElementById("popupImage");
+                    popupImage.src = imgUrl;
+                    const imageModal = new bootstrap.Modal(document.getElementById("imageModal"));
+                    imageModal.show();
+                });
+            });
+        });
+    </script>
+
+    < !--画像拡大表示用のモーダル -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="" id="popupImage" class="img-fluid" alt="拡大表示画像">
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
